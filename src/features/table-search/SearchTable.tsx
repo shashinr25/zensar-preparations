@@ -15,19 +15,21 @@ const users = [
   },
 ];
 
+interface User {
+    id: string;
+    name: string;
+    email: string;
+    avatar: string;
+}
 function SearchTable() {
   const [query, setQuery] = useState("");
   const [selection, setSelection] = useState("id");
   const [filteredUsers, setFilteredUsers] = useState(users);
 
   useEffect(() => {
-    let data = users.filter((user) => {
-      if (user[selection].includes(query)) {
-        return user;
-      }
-    });
+    let data = users.filter((user:User) => (user[selection as keyof User] as string).includes(query));
     setFilteredUsers(data);
-  }, [query]);
+  }, [query, selection]);
 
   return (
     <>
@@ -37,7 +39,7 @@ function SearchTable() {
         <option value="name"> Name </option>
         <option value="email"> Email </option>
       </select>
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
             <th>ID</th>

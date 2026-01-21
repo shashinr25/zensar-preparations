@@ -1,21 +1,20 @@
-import { useState } from "react";
 import Timer from "./features/timer-hooks/Timer";
 import TrafficSignal from "./features/traffic-signal/TrafficSignal";
-import SearchTableOld from "./features/table-search/SearchTableOld";
 import SearchTable from "./features/table-search/SearchTable";
-import ContextComp from './features/hooks/context/ContextComp';
-import ReducerComp from './features/hooks/reducer/ReducerComp';
+import ContextComp from "./features/hooks/context/ContextComp";
+import ReducerComp from "./features/hooks/reducer/ReducerComp";
+import RefComp from "./features/hooks/ref/RefComp";
 import "./App.css";
 
 function App() {
   return (
     <>
-      {/* <Timer /> */}
-      {/* <TrafficSignal /> */}
-      {/* <SearchTableOld />
-      <SearchTable /> */}
-      {/* <ContextComp /> */}
-      <ReducerComp />
+      {/* <Timer />
+      <TrafficSignal />
+      <SearchTable />
+      <ContextComp />
+      <ReducerComp /> */}
+      <RefComp />
     </>
   );
 }
